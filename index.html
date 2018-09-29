@@ -1,12 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Game</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Play" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <title>Bicycle Trivia Game</title>
+
 </head>
+
 <body>
-    
+    <div class="container col-md-8 col-sm-10 col-xs-12">
+        <!--Instructions-->
+        <header class="wrapper instructions">
+            <h1>Bicycle Trivia</h1>
+            <h3>You have one minute to answer these 5 questions about bikes and biking in Chicago.</h3>
+        </header>
+
+        <!--Game play area-->
+        <div class="wrapper game col-md-8 col-sm-10 col-xs-12 border">
+            <form>
+                <div class="row question">
+                    <p>1) Bicycling is the official sport of the state of Illinois.</p>
+                </div>
+                <div class="row answer">
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="True"><span>True</span>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="False"><span>False</span>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="row question">
+                    <p>2) Chicago's Divvy bike share program is the largest bike share program in tne U.S.</p>
+                </div>
+                <div class="row answer">
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="True"><span>True</span>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="False"><span>False</span>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="row question">
+                    <p>3) In the late 1800s Chicago was home to more than 70 bicycle manufacturers.</p>
+                </div>
+                <div class="row answer">
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="True"><span>True</span>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="False"><span>False</span>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="row question">
+                    <p>4) Pedicabs are banned from riding on Michigan Avenue and State Street in downtown Chicago.</p>
+                </div>
+                <div class="row answer">
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="True"><span>True</span>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="False"><span>False</span>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="row question">
+                    <p>5) Cyclists have the same rights as motorists and must follow the rules applicable to a motorist.</p>
+                </div>
+                <div class="row answer">
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="True"><span>True</span>
+                    </div>
+                    <div class="col-md-4 col-sm-5 col-xs-6">
+                        <input type="radio" name="False"><span>False</span>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <div class="row text-center col-12">
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./assets/javascript/app.js"></script>
 </body>
+
 </html>

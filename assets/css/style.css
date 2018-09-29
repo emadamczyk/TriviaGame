@@ -1,0 +1,71 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-image: url("../images/bike-pins.jpg");
+    box-sizing: border-box;
+    
+    
+}
+
+.container {
+    background: none;
+    margin: 0 auto;
+    padding: 5 auto;
+    width: 100%;
+}
+
+.wrapper {
+    margin: 0 50px;
+  
+}
+
+.instructions {
+    background: #4aaaa5;
+    color: #fff;
+    font-family: 'Amatic SC', cursive;
+    font-weight: 900;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.border {
+    border: 1px solid #4aaaa5 !Important;
+    margin: 10px;
+}
+
+span {
+    padding: 0 5px;
+}
+
+.game {
+    background: lightyellow;
+    font-family: 'Play', sans-serif;
+    font-size: 20px;
+    max-width: 100%;
+    padding: 15px 30px;
+}
+
+hr { 
+    background-color: #4aaaa5;
+}
+
+.answer {
+    margin: 0 10px;
+    padding: 0 5px;
+}
+
+.btn-primary {
+    /*float: right;*/
+    background-color: rgb(252, 252, 167);
+    border-color: #4aaaa5;
+    color: black;
+    margin-top: 20px;
+    margin: auto;
+}
+
+.btn-primary:hover {
+    background-color: #4aaaa5; 
+}
