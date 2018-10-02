@@ -40,6 +40,11 @@ span {
     padding: 0 5px;
 }
 
+#start {
+    font-family: 'Play', sans-serif;
+    
+}
+
 .game {
     background: lightyellow;
     font-family: 'Play', sans-serif;
@@ -48,14 +53,14 @@ span {
     padding: 15px 30px;
 }
 
-hr { 
+/*hr { 
     background-color: #4aaaa5;
 }
 
 .answer {
     margin: 0 10px;
     padding: 0 5px;
-}
+}*/
 
 .btn-primary {
     /*float: right;*/
