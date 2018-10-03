@@ -44,7 +44,7 @@ span {
     padding: 0 5px;
 }
 
-#start {
+#start #done {
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
     font-weight: bolder;

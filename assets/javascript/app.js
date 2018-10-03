@@ -4,6 +4,7 @@ $("#start").on("click", function() {
     game.start();
 })
 
+
 $(document).on("click", "#done", function() {
     game.done();
 })
@@ -49,7 +50,8 @@ var game = {
     },
     start: function() {
         timer = setInterval(game.countdown, 1000);
-        $("#game").prepend(<h3>Time Remaining: <span id="counter">60</span> seconds</h3>);
+        console.log(counter)
+        //$("#game").prepend("<h3>Time Remaining: <span id="counter"> 60 </span> seconds</h3>");
         $("#start").remove();
         for (var i = 0; i < questions.length; i++) {
             $("#game").append("<p>" + questions[i].question + "</p>");
@@ -58,7 +60,7 @@ var game = {
             }
         }
     
-    $("#game").append("<br><button id="done">DONE</button></br>")
+    $("#game").append("<br><button id="done">DONE</button></br>");
     },
     done: function() {
         $.each($("input[name="question-0"]:checked"), function() {
@@ -101,14 +103,12 @@ var game = {
     },
     result: function() {
         clearInterval(timer);
-        $("#game").remove();
+        $("#game h3").remove();
         $("#game").html("<h3>The End</h3>");
         $("#game").append("<h3>Correct Answers: " + this.correct + "</h3>");
         $("#game").append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
         $("#game").append("<h3>Unanswered: " + (questions.length-(this.correct + this.incorrect)) + "</h3>");
     }    
-
-
 }
 
 
