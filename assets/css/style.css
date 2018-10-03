@@ -18,17 +18,21 @@ body {
 }
 
 .wrapper {
-    margin: 0 50px;
+    margin: 0 auto;
   
 }
 
-.instructions {
+#title {
     background: #4aaaa5;
     color: #fff;
     font-family: 'Amatic SC', cursive;
-    font-weight: 900;
     margin-top: 10px;
     text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 900 !Important;
 }
 
 .border {
@@ -41,14 +45,15 @@ span {
 }
 
 #start {
-    font-family: 'Play', sans-serif;
-    
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    font-weight: bolder;
 }
 
-.game {
+#game {
     background: lightyellow;
     font-family: 'Play', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     max-width: 100%;
     padding: 15px 30px;
 }
