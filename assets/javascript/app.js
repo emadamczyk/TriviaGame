@@ -56,22 +56,21 @@ var game = {
         timer = setInterval(game.countdown, 1000);
         console.log(game.counter)
         $("#game").prepend("<h3>Time Remaining: <span id='counter'> 60 </span> seconds</h3>");
-        $("#start").remove();
+        $("#start").hide();
         $("#instructions").empty();
         for (var i = 0; i < questions.length; i++) {
-            $("#game").append("<br><br><p>" + questions[i].question + "</p>");
+            $("#questions").append("<br><br><p>" + questions[i].question + "</p>");
             for (var j = 0; j < questions[i].answers.length; j++) {
-                $("#game").append(" "+"<input type='radio' name='question-" + i + "'value='" + questions[i].answers[j] + "'>" + " " + questions[i].answers[j]);
+                $("#questions").append(" "+"<input type='radio' name='question-" + i + "'value='" + questions[i].answers[j] + "'>" + " " + questions[i].answers[j]);
                 //$("#game").append("<button id='choice'>" + questions[i].answers[j] + "</button>")
             }
         }
     
-    $("#game").append($("<br><br><button id='done'>DONE</button>"));
+    $("#questions").append($("<br><br><button id='done'>DONE</button>"));
     },
     done: function() {
-        //var selectedAnswer = $("input[name='question-'"+i+"']:checked").val();
+        //var selectedAnswer = $("input[name='question-" + i + "']:checked").val();
         //console.log(selectedAnswer);
-        
         $.each($("input[name='question-0']:checked"), function() {
             if ($(this).val() === questions[0].correctAnswer) {
                 console.log(this);
@@ -79,7 +78,7 @@ var game = {
             } else {
                 game.incorrect++;
             }
-            console.log(this.value);
+            //console.log(this.value);
         });
         $.each($("input[name='question-1']:checked"), function() {
             if ($(this).val() === questions[1].correctAnswer) {
@@ -118,7 +117,15 @@ var game = {
         $("#game").append("<h3>Correct Answers: " + this.correct + "</h3>");
         $("#game").append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
         $("#game").append("<h3>Unanswered: " + (questions.length-(this.correct + this.incorrect)) + "</h3>");
-    }    
+        //$("#start").show().text("Play Again").click(function() {
+          //  game.reset();
+        //});
+    //},   
+    // attempt to insert a reset button did not work at this time. Questions kept appending themselves to the previous question list even after emptying the div
+    //reset: function() {
+      //  $("#game h3").remove();
+        //game.start();
+    }
 }
 });
 
