@@ -61,7 +61,7 @@ var game = {
         for (var i = 0; i < questions.length; i++) {
             $("#game").append("<br><br><p>" + questions[i].question + "</p>");
             for (var j = 0; j < questions[i].answers.length; j++) {
-                $("#game").append(" " + "<input type='radio' name='question-'" + i + "' value=' " +  questions[i].answers[j] +"' >" + " " + questions[i].answers[j]);
+                $("#game").append(" "+"<input type='radio' name='question-" + i + "'value='" + questions[i].answers[j] + "'>" + " " + questions[i].answers[j]);
                 //$("#game").append("<button id='choice'>" + questions[i].answers[j] + "</button>")
             }
         }
@@ -69,8 +69,12 @@ var game = {
     $("#game").append($("<br><br><button id='done'>DONE</button>"));
     },
     done: function() {
+        //var selectedAnswer = $("input[name='question-'"+i+"']:checked").val();
+        //console.log(selectedAnswer);
+        
         $.each($("input[name='question-0']:checked"), function() {
             if ($(this).val() === questions[0].correctAnswer) {
+                console.log(this);
                 game.correct++;
             } else {
                 game.incorrect++;

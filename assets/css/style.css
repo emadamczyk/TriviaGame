@@ -80,6 +80,10 @@ span {
     background-color: #4aaaa5; 
 }
 
+#done:hover {
+    background-color: red;
+}
+
 /*if use buttons instead of radio dots
 #choice {
     background-color: lightcyan; 
