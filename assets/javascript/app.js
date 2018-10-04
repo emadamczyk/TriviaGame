@@ -39,7 +39,7 @@ var questions = [
 var game = {
     correct: 0,
     incorrect: 0,
-    counter: 10, 
+    counter: 60, 
     countdown: function() {
         game.counter--;
         $("#counter").html(game.counter);
@@ -57,11 +57,12 @@ var game = {
         console.log(game.counter)
         $("#game").prepend("<h3>Time Remaining: <span id='counter'> 60 </span> seconds</h3>");
         $("#start").remove();
-        $("#game").empty();
+        $("#instructions").empty();
         for (var i = 0; i < questions.length; i++) {
             $("#game").append("<br><br><p>" + questions[i].question + "</p>");
             for (var j = 0; j < questions[i].answers.length; j++) {
                 $("#game").append(" " + "<input type='radio' name='question-'" + i + "' value=' " +  questions[i].answers[j] +"' >" + " " + questions[i].answers[j]);
+                //$("#game").append("<button id='choice'>" + questions[i].answers[j] + "</button>")
             }
         }
     

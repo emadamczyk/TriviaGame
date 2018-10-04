@@ -79,3 +79,15 @@ span {
 .btn-primary:hover {
     background-color: #4aaaa5; 
 }
+
+/*if use buttons instead of radio dots
+#choice {
+    background-color: lightcyan; 
+    margin: 0 20px; !Important
+}
+
+#choice:hover {
+    background-color: #4aaaa5;
+}
+*/
+
