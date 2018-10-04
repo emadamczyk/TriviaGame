@@ -60,7 +60,7 @@ var game = {
             }
         }
     
-    $("#game").append("<br><button id="done">DONE</button></br>");
+    $("#game").append($("<button id="done">DONE</button>"));
     },
     done: function() {
         $.each($("input[name="question-0"]:checked"), function() {
@@ -110,6 +110,6 @@ var game = {
         $("#game").append("<h3>Unanswered: " + (questions.length-(this.correct + this.incorrect)) + "</h3>");
     }    
 }
-
+}
 
 
