@@ -8,7 +8,7 @@ $("#start").on("click", function() {
 $(document).on("click", "#done", function() {
     game.done();
 })
-
+var timer; 
 var questions = [
     {
         question: "1) Bicycling is the official sport of the state of Illinois.",
@@ -42,6 +42,7 @@ var game = {
     counter: 60, 
     countdown: function() {
         game.counter--;
+        console.log(game.counter);
         $("#counter").html(game.counter);
         if (game.counter <= 0) {
             console.log("Time's Up!");
@@ -49,24 +50,26 @@ var game = {
             delayedAlert = setTimeout(function() {
                 game.done();
               }, 1000);
-            
+            clearInterval(timer);
         }
     },
     start: function() {
         timer = setInterval(game.countdown, 1000);
         console.log(game.counter)
+        $("#game").empty();
         $("#game").prepend("<h3>Time Remaining: <span id='counter'> 60 </span> seconds</h3>");
         $("#start").hide();
-        $("#instructions").empty();
+        //$("#instructions").empty();
+        
         for (var i = 0; i < questions.length; i++) {
-            $("#questions").append("<br><br><p>" + questions[i].question + "</p>");
+            $("#game").append("<br><br><p>" + questions[i].question + "</p>");
             for (var j = 0; j < questions[i].answers.length; j++) {
-                $("#questions").append(" "+"<input type='radio' name='question-" + i + "'value='" + questions[i].answers[j] + "'>" + " " + questions[i].answers[j]);
+                $("#game").append(" "+"<input type='radio' name='question-" + i + "'value='" + questions[i].answers[j] + "'>" + " " + questions[i].answers[j]);
                 //$("#game").append("<button id='choice'>" + questions[i].answers[j] + "</button>")
             }
         }
     
-    $("#questions").append($("<br><br><button id='done'>DONE</button>"));
+    $("#game").append($("<br><br><button id='done'>DONE</button>"));
     },
     done: function() {
         //var selectedAnswer = $("input[name='question-" + i + "']:checked").val();
@@ -108,6 +111,7 @@ var game = {
                 game.incorrect++;
             }
         });
+        
         this.result();
     },
     result: function() {
@@ -117,14 +121,19 @@ var game = {
         $("#game").append("<h3>Correct Answers: " + this.correct + "</h3>");
         $("#game").append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
         $("#game").append("<h3>Unanswered: " + (questions.length-(this.correct + this.incorrect)) + "</h3>");
-        //$("#start").show().text("Play Again").click(function() {
-          //  game.reset();
-        //});
-    //},   
+        $("#start").show().text("Play Again").click(function() {
+            game.reset();
+        });
+    },   
     // attempt to insert a reset button did not work at this time. Questions kept appending themselves to the previous question list even after emptying the div
-    //reset: function() {
-      //  $("#game h3").remove();
-        //game.start();
+    reset: function() {
+        clearInterval(timer);
+        $("#game h3").remove();
+        game.start();
+        game.correct = 0;
+        game.incorrect = 0;
+        game.counter = 60;
+
     }
 }
 });
